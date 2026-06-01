@@ -1,6 +1,9 @@
 import { useEffect, useSyncExternalStore } from 'react';
 import { GameSettingsOrbittapLite, GameplayOrbittapLite } from './screens';
 import { orbitTapStore } from './features/orbittap-lite/orbittap-lite.store';
+import { actPauseGame } from './features/surf-gameplay/act_pause_game';
+import { actRestartGame } from './features/surf-gameplay/act_restart_game';
+import { actStartGame } from './features/surf-gameplay/act_start_game';
 import { installOrbitTapBridge } from './test/bridge';
 
 export default function App() {
@@ -34,23 +37,19 @@ export default function App() {
       }
 
       if (event.key === 'Escape' || event.key.toLowerCase() === 'p') {
-        if (state.activeScreen === 'gameplay') {
-          orbitTapStore.actions.pause();
-        } else {
-          orbitTapStore.actions.resume();
-        }
+        actPauseGame();
         return;
       }
 
       if (event.key.toLowerCase() === 'r') {
-        orbitTapStore.actions.restart();
+        actRestartGame();
         return;
       }
 
       if (event.key === ' ' || event.key === 'Enter') {
-        if (gameplayActive) {
+        if (state.activeScreen === 'gameplay') {
           event.preventDefault();
-          orbitTapStore.actions.tapToLaunch();
+          actStartGame();
         }
       }
     }
@@ -60,8 +59,8 @@ export default function App() {
   }, [gameplayActive, state.activeScreen]);
 
   const gameplayActions = {
-    'pause-1': orbitTapStore.actions.pause,
-    'tap-to-launch-2': gameplayActive ? orbitTapStore.actions.tapToLaunch : undefined,
+    'pause-1': () => actPauseGame(),
+    'tap-to-launch-2': state.activeScreen === 'gameplay' ? () => actStartGame() : undefined,
   };
 
   const settingsActions = {
