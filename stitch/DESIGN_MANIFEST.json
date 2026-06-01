@@ -1,0 +1,24 @@
+[
+  {
+    "screenId": "b34b7be508404fedab4f22e09588b11d",
+    "title": "Gameplay - OrbitTap Lite",
+    "htmlFile": "b34b7be508404fedab4f22e09588b11d.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzNiNDcwZDA4NzU1MTRhNjI5ZjcxNjIzMmYwMWY1OTI3EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2Mjg3MTY5NDg2MDQ1NjgxNDM0&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/orbittap-lite-c030d5d6/stitch/b34b7be508404fedab4f22e09588b11d.html",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "de54a9ca3ccc499f8878b582ac19a59d",
+    "title": "Game Settings - OrbitTap Lite",
+    "htmlFile": "de54a9ca3ccc499f8878b582ac19a59d.html",
+    "deviceType": "DESKTOP",
+    "htmlUrl": "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ7Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpaCiVodG1sXzZmMDU3ZWExNThhMDRhMTU5NzU3MzE1NDVkNzcyMDA4EgsSBxCN19Wi9xcYAZIBIwoKcHJvamVjdF9pZBIVQhM2Mjg3MTY5NDg2MDQ1NjgxNDM0&filename=&opi=96797242",
+    "localHtml": "/Users/setrox/projects/orbittap-lite-c030d5d6/stitch/de54a9ca3ccc499f8878b582ac19a59d.html",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]

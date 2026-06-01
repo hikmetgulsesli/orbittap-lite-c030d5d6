@@ -1,0 +1,633 @@
+{
+  "generatedAt": "2026-06-01T10:23:41.000Z",
+  "screenCount": 2,
+  "screens": {
+    "b34b7be508404fedab4f22e09588b11d": {
+      "screenId": "b34b7be508404fedab4f22e09588b11d",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "top-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-hud-padding",
+            "pt-hud-padding"
+          ],
+          "childCount": 7
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "absolute",
+            "inset-0",
+            "z-10",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "childCount": 11
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "pause",
+          "classes": [
+            "h-12",
+            "w-12",
+            "rounded-full",
+            "border",
+            "border-primary-container/50",
+            "bg-surface-container/30",
+            "backdrop-blur-md",
+            "flex",
+            "items-center",
+            "justify-center",
+            "text-primary-fixed",
+            "hover:opacity-80",
+            "transition-opacity",
+            "scale-95",
+            "active:scale-90",
+            "shadow-[0_0_15px_rgba(0,219,231,0.2)]"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "TAP TO LAUNCH",
+          "classes": [
+            "w-full",
+            "py-4",
+            "rounded-full",
+            "bg-primary-container",
+            "text-on-primary-fixed",
+            "font-headline-lg-mobile",
+            "text-headline-lg-mobile",
+            "shadow-[0_0_20px_rgba(0,242,255,0.6)]",
+            "hover:bg-primary-fixed",
+            "hover:scale-105",
+            "active:scale-95",
+            "transition-all",
+            "duration-200"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "pause"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary-fixed": "#320047",
+        "inverse-on-surface": "#2e3037",
+        "tertiary-container": "#ffd66e",
+        "background": "#10131a",
+        "surface-dim": "#10131a",
+        "on-tertiary-container": "#775c00",
+        "on-secondary": "#520071",
+        "on-primary-fixed": "#002022",
+        "surface-tint": "#00dbe7",
+        "surface-container-high": "#272a31",
+        "surface": "#10131a",
+        "on-error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ecb2ff",
+        "on-primary-fixed-variant": "#004f54",
+        "on-primary": "#00363a",
+        "primary-container": "#00f2ff",
+        "on-secondary-container": "#480063",
+        "on-surface": "#e1e2eb",
+        "surface-container-lowest": "#0b0e14",
+        "on-tertiary": "#3e2e00",
+        "on-background": "#e1e2eb",
+        "on-tertiary-fixed-variant": "#594400",
+        "on-surface-variant": "#b9cacb",
+        "surface-container": "#1d2026",
+        "on-secondary-fixed-variant": "#74009f",
+        "primary-fixed-dim": "#00dbe7",
+        "primary-fixed": "#74f5ff",
+        "outline-variant": "#3a494b",
+        "outline": "#849495",
+        "secondary-container": "#cf5cff",
+        "error-container": "#93000a",
+        "surface-container-low": "#191c22",
+        "tertiary-fixed": "#ffdf94",
+        "surface-bright": "#363940",
+        "surface-variant": "#32353c",
+        "surface-container-highest": "#32353c",
+        "secondary": "#ecb2ff",
+        "on-primary-container": "#006a71",
+        "tertiary": "#fff6e9",
+        "secondary-fixed": "#f8d8ff",
+        "on-error": "#690005",
+        "error": "#ffb4ab",
+        "tertiary-fixed-dim": "#f5bf00",
+        "on-tertiary-fixed": "#251a00",
+        "inverse-surface": "#e1e2eb",
+        "inverse-primary": "#00696f",
+        "primary": "#e1fdff"
+      },
+      "fonts": [
+        "Space Grotesk",
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "flexDirection": "col",
+        "gap": "4"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "pause",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "TAP TO LAUNCH",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "tabBar": [],
+      "title": "Gameplay - OrbitTap Lite"
+    },
+    "de54a9ca3ccc499f8878b582ac19a59d": {
+      "screenId": "de54a9ca3ccc499f8878b582ac19a59d",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "fixed",
+            "top-0",
+            "left-0",
+            "w-full",
+            "z-50",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-hud-padding",
+            "pt-hud-padding"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "relative",
+          "classes": [
+            "relative",
+            "z-10",
+            "w-full",
+            "max-w-md",
+            "px-container-margin",
+            "md:px-0"
+          ],
+          "childCount": 23
+        },
+        {
+          "tag": "nav",
+          "layout": "flex-col",
+          "classes": [
+            "hidden",
+            "md:flex",
+            "flex-col",
+            "h-screen",
+            "w-64",
+            "border-r",
+            "border-outline-variant/30",
+            "bg-surface-container/30",
+            "backdrop-blur-xl",
+            "shadow-[0_0_20px_rgba(0,219,231,0.2)]"
+          ],
+          "childCount": 8
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "pause",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:opacity-80",
+            "transition-opacity",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Close settings",
+          "classes": [
+            "text-on-surface-variant",
+            "hover:text-primary-container",
+            "transition-colors",
+            "p-2",
+            "rounded-full",
+            "hover:bg-surface-variant/30"
+          ],
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "& Resume",
+          "classes": [
+            "btn-neon",
+            "w-full",
+            "py-3",
+            "rounded-full",
+            "font-bold",
+            "text-center",
+            "uppercase",
+            "tracking-wider",
+            "text-sm",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2"
+          ],
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Reset High Score",
+          "classes": [
+            "btn-ghost",
+            "w-full",
+            "py-3",
+            "rounded-full",
+            "font-semibold",
+            "text-center",
+            "text-sm",
+            "flex",
+            "items-center",
+            "justify-center",
+            "gap-2"
+          ],
+          "icon": "restart_alt",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "UPGRADE PILOT",
+          "classes": [
+            "btn-ghost",
+            "w-full",
+            "py-3",
+            "rounded-full",
+            "font-bold",
+            "text-center",
+            "text-xs",
+            "uppercase",
+            "tracking-wider"
+          ],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "ORBITAL ZONE",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Pilot ID: 8821",
+          "classes": [],
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "radio",
+          "label": "difficulty",
+          "placeholder": "",
+          "name": "difficulty",
+          "classes": [
+            "sr-only"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "toggle",
+          "placeholder": "",
+          "name": "toggle",
+          "classes": [
+            "toggle-checkbox",
+            "absolute",
+            "block",
+            "w-6",
+            "h-6",
+            "rounded-full",
+            "bg-white",
+            "border-4",
+            "appearance-none",
+            "cursor-pointer",
+            "z-10",
+            "opacity-0"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [
+        {
+          "kind": "link",
+          "label": "Play",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "play_arrow",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "leaderboard",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "leaderboard",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "settings",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profile",
+          "href": "#",
+          "classes": [
+            "material-symbols-outlined"
+          ],
+          "icon": "person",
+          "action": "navigate",
+          "expectedBehavior": "navigate:#"
+        }
+      ],
+      "cards": [],
+      "icons": [
+        "pause",
+        "close",
+        "volume_up",
+        "graphic_eq",
+        "save",
+        "restart_alt",
+        "play_arrow",
+        "leaderboard",
+        "settings",
+        "person"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary-fixed": "#320047",
+        "inverse-on-surface": "#2e3037",
+        "tertiary-container": "#ffd66e",
+        "background": "#10131a",
+        "surface-dim": "#10131a",
+        "on-tertiary-container": "#775c00",
+        "on-secondary": "#520071",
+        "on-primary-fixed": "#002022",
+        "surface-tint": "#00dbe7",
+        "surface-container-high": "#272a31",
+        "surface": "#10131a",
+        "on-error-container": "#ffdad6",
+        "secondary-fixed-dim": "#ecb2ff",
+        "on-primary-fixed-variant": "#004f54",
+        "on-primary": "#00363a",
+        "primary-container": "#00f2ff",
+        "on-secondary-container": "#480063",
+        "on-surface": "#e1e2eb",
+        "surface-container-lowest": "#0b0e14",
+        "on-tertiary": "#3e2e00",
+        "on-background": "#e1e2eb",
+        "on-tertiary-fixed-variant": "#594400",
+        "on-surface-variant": "#b9cacb",
+        "surface-container": "#1d2026",
+        "on-secondary-fixed-variant": "#74009f",
+        "primary-fixed-dim": "#00dbe7",
+        "primary-fixed": "#74f5ff",
+        "outline-variant": "#3a494b",
+        "outline": "#849495",
+        "secondary-container": "#cf5cff",
+        "error-container": "#93000a",
+        "surface-container-low": "#191c22",
+        "tertiary-fixed": "#ffdf94",
+        "surface-bright": "#363940",
+        "surface-variant": "#32353c",
+        "surface-container-highest": "#32353c",
+        "secondary": "#ecb2ff",
+        "on-primary-container": "#006a71",
+        "tertiary": "#fff6e9",
+        "secondary-fixed": "#f8d8ff",
+        "on-error": "#690005",
+        "error": "#ffb4ab",
+        "tertiary-fixed-dim": "#f5bf00",
+        "on-tertiary-fixed": "#251a00",
+        "inverse-surface": "#e1e2eb",
+        "inverse-primary": "#00696f",
+        "primary": "#e1fdff"
+      },
+      "fonts": [
+        "Space Grotesk",
+        "Inter",
+        "Material Symbols Outlined"
+      ],
+      "layoutHints": {
+        "gridCols": 2,
+        "flexDirection": "col",
+        "gap": "6"
+      },
+      "behaviorContract": [
+        {
+          "kind": "link",
+          "label": "Play",
+          "icon": "play_arrow",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "leaderboard",
+          "icon": "leaderboard",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "link",
+          "label": "Profile",
+          "icon": "person",
+          "route": "#",
+          "expectedBehavior": "navigate:#"
+        },
+        {
+          "kind": "button",
+          "label": "pause",
+          "icon": "pause",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Close settings",
+          "icon": "close",
+          "action": "dismiss",
+          "expectedBehavior": "close dialog/panel or return to previous state"
+        },
+        {
+          "kind": "button",
+          "label": "& Resume",
+          "icon": "save",
+          "action": "form-submit",
+          "expectedBehavior": "validate inputs and submit/apply changes"
+        },
+        {
+          "kind": "button",
+          "label": "Reset High Score",
+          "icon": "restart_alt",
+          "action": "reset",
+          "expectedBehavior": "reset visible value/state, with confirmation if destructive"
+        },
+        {
+          "kind": "button",
+          "label": "UPGRADE PILOT",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "ORBITAL ZONE",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Pilot ID: 8821",
+          "icon": null,
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "difficulty",
+          "type": "radio",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        },
+        {
+          "kind": "input",
+          "label": "toggle",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [
+        {
+          "kind": "button",
+          "label": "ORBITAL ZONE",
+          "icon": null,
+          "active": true
+        },
+        {
+          "kind": "button",
+          "label": "Pilot ID: 8821",
+          "icon": null,
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "Play",
+          "icon": "play_arrow",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "leaderboard",
+          "icon": "leaderboard",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "link",
+          "label": "settings",
+          "icon": "settings",
+          "route": "#",
+          "active": true
+        },
+        {
+          "kind": "link",
+          "label": "Profile",
+          "icon": "person",
+          "route": "#",
+          "active": false
+        },
+        {
+          "kind": "button",
+          "label": "UPGRADE PILOT",
+          "icon": null,
+          "active": false
+        }
+      ],
+      "title": "Game Settings - OrbitTap Lite"
+    }
+  }
+}

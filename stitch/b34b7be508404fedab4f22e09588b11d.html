@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OrbitTap Lite - Gameplay</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed": "#320047",
+                        "inverse-on-surface": "#2e3037",
+                        "tertiary-container": "#ffd66e",
+                        "background": "#10131a",
+                        "surface-dim": "#10131a",
+                        "on-tertiary-container": "#775c00",
+                        "on-secondary": "#520071",
+                        "on-primary-fixed": "#002022",
+                        "surface-tint": "#00dbe7",
+                        "surface-container-high": "#272a31",
+                        "surface": "#10131a",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ecb2ff",
+                        "on-primary-fixed-variant": "#004f54",
+                        "on-primary": "#00363a",
+                        "primary-container": "#00f2ff",
+                        "on-secondary-container": "#480063",
+                        "on-surface": "#e1e2eb",
+                        "surface-container-lowest": "#0b0e14",
+                        "on-tertiary": "#3e2e00",
+                        "on-background": "#e1e2eb",
+                        "on-tertiary-fixed-variant": "#594400",
+                        "on-surface-variant": "#b9cacb",
+                        "surface-container": "#1d2026",
+                        "on-secondary-fixed-variant": "#74009f",
+                        "primary-fixed-dim": "#00dbe7",
+                        "primary-fixed": "#74f5ff",
+                        "outline-variant": "#3a494b",
+                        "outline": "#849495",
+                        "secondary-container": "#cf5cff",
+                        "error-container": "#93000a",
+                        "surface-container-low": "#191c22",
+                        "tertiary-fixed": "#ffdf94",
+                        "surface-bright": "#363940",
+                        "surface-variant": "#32353c",
+                        "surface-container-highest": "#32353c",
+                        "secondary": "#ecb2ff",
+                        "on-primary-container": "#006a71",
+                        "tertiary": "#fff6e9",
+                        "secondary-fixed": "#f8d8ff",
+                        "on-error": "#690005",
+                        "error": "#ffb4ab",
+                        "tertiary-fixed-dim": "#f5bf00",
+                        "on-tertiary-fixed": "#251a00",
+                        "inverse-surface": "#e1e2eb",
+                        "inverse-primary": "#00696f",
+                        "primary": "#e1fdff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1rem",
+                        "component-gap": "0.75rem",
+                        "hud-padding": "1.5rem",
+                        "container-margin": "2rem"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "score-display": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "600" }],
+                        "score-display": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.04em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .starfield {
+            background-image: 
+                radial-gradient(1px 1px at 20px 30px, #ffffff40, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 40px 70px, #ffffff40, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 50px 160px, #ffffff40, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 90px 40px, #ffffff40, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 130px 80px, #ffffff40, rgba(0,0,0,0)),
+                radial-gradient(1px 1px at 160px 120px, #ffffff40, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 200px 200px;
+            animation: slowDrift 60s linear infinite;
+        }
+
+        .grid-bg {
+            background-image: 
+                linear-gradient(to right, rgba(0, 219, 231, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 219, 231, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        @keyframes slowDrift {
+            from { background-position: 0 0; }
+            to { background-position: -200px 200px; }
+        }
+
+        @keyframes spinRight {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        @keyframes spinLeft {
+            from { transform: translate(-50%, -50%) rotate(360deg); }
+            to { transform: translate(-50%, -50%) rotate(0deg); }
+        }
+
+        @keyframes pulseHaz {
+            0%, 100% { box-shadow: 0 0 10px #ffb4ab, inset 0 0 5px #93000a; }
+            50% { box-shadow: 0 0 20px #ffb4ab, inset 0 0 15px #93000a; }
+        }
+
+        .ring-base {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid transparent;
+        }
+
+        .ring-active {
+            border-color: theme('colors.primary-container');
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.4), inset 0 0 10px rgba(0, 242, 255, 0.2);
+            animation: spinRight 10s linear infinite;
+        }
+
+        .ring-inactive {
+            border-color: rgba(116, 0, 159, 0.3); /* Deep purple ish */
+            animation: spinLeft 15s linear infinite;
+        }
+        
+        .hazard {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: theme('colors.error');
+            border-radius: 50%;
+            top: -8.5px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: pulseHaz 1.5s infinite ease-in-out;
+        }
+
+        .gap {
+            position: absolute;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 4px;
+            background-color: theme('colors.surface-container-lowest'); /* Mask the border */
+        }
+
+        .spark {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #FFC700;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #FFC700, 0 0 20px rgba(255, 199, 0, 0.5);
+            animation: pulseHaz 2s infinite ease-in-out alternate; /* Reuse pulse keyframes for ease */
+        }
+
+        .hud-panel {
+            background-color: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-background h-screen w-screen overflow-hidden relative">
+<!-- Background Layers -->
+<div class="absolute inset-0 starfield z-0 pointer-events-none"></div>
+<div class="absolute inset-0 grid-bg z-0 pointer-events-none"></div>
+<!-- Top App Bar (HUD) -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-hud-padding pt-hud-padding max-w-full bg-transparent">
+<div class="flex flex-col">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary-fixed md:hidden">ORBIT TAP LITE</h1>
+<h1 class="font-headline-lg text-headline-lg font-bold text-primary-fixed hidden md:block">ORBIT TAP LITE</h1>
+<div class="hud-panel rounded-lg px-4 py-2 mt-2 flex items-center gap-4 w-fit">
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Score</span>
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-primary-fixed">1,240</span>
+</div>
+<div class="h-8 w-px bg-outline-variant/50"></div>
+<div>
+<span class="font-label-caps text-label-caps text-on-surface-variant block uppercase">Best</span>
+<span class="font-body-md text-body-md text-on-surface">5,800</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-end gap-2">
+<button class="h-12 w-12 rounded-full border border-primary-container/50 bg-surface-container/30 backdrop-blur-md flex items-center justify-center text-primary-fixed hover:opacity-80 transition-opacity scale-95 active:scale-90 shadow-[0_0_15px_rgba(0,219,231,0.2)]">
+<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">pause</span>
+</button>
+<div class="hud-panel rounded-full px-3 py-1">
+<span class="font-label-caps text-label-caps text-tertiary-container uppercase tracking-widest">Level 4</span>
+</div>
+</div>
+</header>
+<!-- Playfield / Canvas -->
+<main class="absolute inset-0 z-10 flex items-center justify-center">
+<div class="relative w-[300px] h-[300px] md:w-[500px] md:h-[500px]">
+<!-- Central Launch Pad -->
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 md:w-24 md:h-24 bg-surface-variant rounded-full border-2 border-primary-container shadow-[0_0_20px_rgba(0,242,255,0.5)] z-20 flex items-center justify-center">
+<div class="w-8 h-8 md:w-12 md:h-12 bg-primary-fixed rounded-full shadow-[0_0_15px_rgba(116,245,255,0.8)] animate-pulse"></div>
+</div>
+<!-- Ring 1 (Inner, Inactive) -->
+<div class="ring-base ring-inactive w-[120px] h-[120px] md:w-[200px] md:h-[200px] z-10">
+<div class="hazard" style="top: 50%; left: -8.5px; transform: translateY(-50%);"></div>
+</div>
+<!-- Ring 2 (Active, Target) -->
+<div class="ring-base ring-active w-[200px] h-[200px] md:w-[320px] md:h-[320px] z-10" style="animation-duration: 8s; animation-direction: reverse;">
+<div class="gap" style="top: 50%; left: 100%; transform: translate(-50%, -50%) rotate(90deg);"></div>
+<div class="spark" style="top: 20%; left: 80%;"></div>
+</div>
+<!-- Ring 3 (Outer, Inactive) -->
+<div class="ring-base ring-inactive w-[280px] h-[280px] md:w-[460px] md:h-[460px] z-10" style="animation-duration: 20s;">
+<div class="hazard" style="top: 10%; left: 20%;"></div>
+<div class="hazard" style="bottom: 10%; right: 20%;"></div>
+</div>
+</div>
+</main>
+<!-- Bottom Action -->
+<div class="fixed bottom-container-margin left-1/2 transform -translate-x-1/2 z-50 w-full px-hud-padding max-w-sm flex justify-center">
+<button class="w-full py-4 rounded-full bg-primary-container text-on-primary-fixed font-headline-lg-mobile text-headline-lg-mobile shadow-[0_0_20px_rgba(0,242,255,0.6)] hover:bg-primary-fixed hover:scale-105 active:scale-95 transition-all duration-200">
+            TAP TO LAUNCH
+        </button>
+</div>
+</body></html>

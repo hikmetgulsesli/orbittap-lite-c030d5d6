@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>OrbitTap Lite - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#320047",
+                    "inverse-on-surface": "#2e3037",
+                    "tertiary-container": "#ffd66e",
+                    "background": "#10131a",
+                    "surface-dim": "#10131a",
+                    "on-tertiary-container": "#775c00",
+                    "on-secondary": "#520071",
+                    "on-primary-fixed": "#002022",
+                    "surface-tint": "#00dbe7",
+                    "surface-container-high": "#272a31",
+                    "surface": "#10131a",
+                    "on-error-container": "#ffdad6",
+                    "secondary-fixed-dim": "#ecb2ff",
+                    "on-primary-fixed-variant": "#004f54",
+                    "on-primary": "#00363a",
+                    "primary-container": "#00f2ff",
+                    "on-secondary-container": "#480063",
+                    "on-surface": "#e1e2eb",
+                    "surface-container-lowest": "#0b0e14",
+                    "on-tertiary": "#3e2e00",
+                    "on-background": "#e1e2eb",
+                    "on-tertiary-fixed-variant": "#594400",
+                    "on-surface-variant": "#b9cacb",
+                    "surface-container": "#1d2026",
+                    "on-secondary-fixed-variant": "#74009f",
+                    "primary-fixed-dim": "#00dbe7",
+                    "primary-fixed": "#74f5ff",
+                    "outline-variant": "#3a494b",
+                    "outline": "#849495",
+                    "secondary-container": "#cf5cff",
+                    "error-container": "#93000a",
+                    "surface-container-low": "#191c22",
+                    "tertiary-fixed": "#ffdf94",
+                    "surface-bright": "#363940",
+                    "surface-variant": "#32353c",
+                    "surface-container-highest": "#32353c",
+                    "secondary": "#ecb2ff",
+                    "on-primary-container": "#006a71",
+                    "tertiary": "#fff6e9",
+                    "secondary-fixed": "#f8d8ff",
+                    "on-error": "#690005",
+                    "error": "#ffb4ab",
+                    "tertiary-fixed-dim": "#f5bf00",
+                    "on-tertiary-fixed": "#251a00",
+                    "inverse-surface": "#e1e2eb",
+                    "inverse-primary": "#00696f",
+                    "primary": "#e1fdff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "1rem",
+                    "component-gap": "0.75rem",
+                    "hud-padding": "1.5rem",
+                    "container-margin": "2rem"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": [
+                            "Space Grotesk"
+                    ],
+                    "label-caps": [
+                            "Space Grotesk"
+                    ],
+                    "score-display": [
+                            "Space Grotesk"
+                    ],
+                    "headline-lg": [
+                            "Space Grotesk"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-caps": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "score-display": [
+                            "64px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.5",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0B0E14;
+            color: #e1e2eb;
+            overflow: hidden;
+        }
+
+        /* The Void Background */
+        .void-bg {
+            position: absolute;
+            inset: 0;
+            background: #0B0E14;
+            z-index: -3;
+        }
+
+        /* The Grid */
+        .grid-bg {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(to right, rgba(0, 242, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -2;
+            pointer-events: none;
+        }
+
+        /* Blurred Gameplay Backdrop */
+        .gameplay-blur {
+            position: absolute;
+            inset: 0;
+            backdrop-filter: blur(20px);
+            background-color: rgba(11, 14, 20, 0.6);
+            z-index: -1;
+        }
+
+        /* Glassmorphism Panel */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(0, 242, 255, 0.3);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.1);
+        }
+
+        /* Neon Glow Button */
+        .btn-neon {
+            background-color: #00f2ff; /* primary-container */
+            color: #002022; /* on-primary-fixed */
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-neon:hover {
+            box-shadow: 0 0 15px rgba(0, 242, 255, 0.8);
+            transform: scale(1.02);
+        }
+        .btn-neon:active {
+            transform: scale(0.98);
+        }
+
+        /* Ghost Button */
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid #00f2ff;
+            color: #00f2ff;
+            transition: all 0.2s ease-in-out;
+        }
+        .btn-ghost:hover {
+            background: rgba(0, 242, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.3) inset;
+        }
+
+        /* Segmented Control */
+        .segment-control input[type="radio"]:checked + label {
+            background-color: rgba(0, 242, 255, 0.2);
+            color: #74f5ff; /* primary-fixed */
+            border-color: #00f2ff;
+            box-shadow: 0 0 10px rgba(0, 242, 255, 0.2) inset;
+        }
+
+        /* Custom Toggle Switch */
+        .toggle-checkbox:checked {
+            background-color: #00f2ff;
+            border-color: #00f2ff;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #00f2ff;
+        }
+        .toggle-checkbox:checked + .toggle-label:after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        .toggle-label {
+            width: 44px;
+            height: 24px;
+            background-color: #3a494b; /* outline-variant */
+            border-radius: 9999px;
+            position: relative;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .toggle-label:after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border-radius: 50%;
+            transition: transform 0.2s;
+        }
+        .toggle-checkbox:focus + .toggle-label {
+            box-shadow: 0 0 0 2px rgba(0, 242, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center font-body-md text-body-md relative">
+<!-- Background Layers -->
+<div class="void-bg"></div>
+<div class="grid-bg"></div>
+<!-- Simulated Gameplay Elements in Background (to show through blur) -->
+<div class="absolute w-32 h-32 rounded-full border-2 border-primary-container/30 left-1/4 top-1/4 -z-20 shadow-[0_0_20px_rgba(0,242,255,0.2)]"></div>
+<div class="absolute w-64 h-64 rounded-full border border-secondary-container/20 right-1/4 bottom-1/4 -z-20"></div>
+<div class="gameplay-blur"></div>
+<!-- Navigation Shell - TopAppBar (Small, Mobile context assumed based on "Lite") -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-hud-padding pt-hud-padding max-w-full bg-transparent no-border flat no shadows transition-transform scale-95 active:scale-90 md:hidden">
+<div class="text-headline-lg-mobile font-headline-lg-mobile font-bold text-primary-fixed">ORBIT TAP LITE</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant hover:opacity-80 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">pause</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas - Settings Modal -->
+<main class="relative z-10 w-full max-w-md px-container-margin md:px-0">
+<div class="glass-panel rounded-lg p-hud-padding flex flex-col gap-6">
+<!-- Header -->
+<div class="flex justify-between items-center pb-4 border-b border-outline-variant/30">
+<h1 class="font-headline-lg text-headline-lg md:font-headline-lg md:text-headline-lg text-primary-fixed">Settings</h1>
+<button aria-label="Close settings" class="text-on-surface-variant hover:text-primary-container transition-colors p-2 rounded-full hover:bg-surface-variant/30">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Difficulty Section -->
+<section class="flex flex-col gap-3">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant">DIFFICULTY</h2>
+<div class="segment-control flex bg-surface-container-high rounded-full p-1 border border-outline-variant/50">
+<div class="flex-1 relative">
+<input checked="" class="sr-only" id="diff-casual" name="difficulty" type="radio"/>
+<label class="block w-full text-center py-2 rounded-full cursor-pointer text-sm font-semibold text-on-surface transition-all border border-transparent" for="diff-casual">
+                            Casual
+                        </label>
+</div>
+<div class="flex-1 relative">
+<input class="sr-only" id="diff-pilot" name="difficulty" type="radio"/>
+<label class="block w-full text-center py-2 rounded-full cursor-pointer text-sm font-semibold text-on-surface transition-all border border-transparent" for="diff-pilot">
+                            Pilot
+                        </label>
+</div>
+<div class="flex-1 relative">
+<input class="sr-only" id="diff-ace" name="difficulty" type="radio"/>
+<label class="block w-full text-center py-2 rounded-full cursor-pointer text-sm font-semibold text-on-surface transition-all border border-transparent" for="diff-ace">
+                            Ace
+                        </label>
+</div>
+</div>
+</section>
+<!-- Audio Section -->
+<section class="flex flex-col gap-4">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant">AUDIO</h2>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-on-surface-variant">volume_up</span>
+<span>Sound Effects</span>
+</div>
+<div class="relative inline-block w-11 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="sfx-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer" for="sfx-toggle"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-on-surface-variant">graphic_eq</span>
+<span>Ambient Synth</span>
+</div>
+<div class="relative inline-block w-11 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10 opacity-0" id="music-toggle" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full cursor-pointer" for="music-toggle"></label>
+</div>
+</div>
+</section>
+<!-- Input Help Section -->
+<section class="flex flex-col gap-3 pt-2 border-t border-outline-variant/30">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant">INPUT COMMANDS</h2>
+<div class="grid grid-cols-2 gap-y-2 text-sm">
+<div class="text-on-surface-variant">Launch</div>
+<div class="text-right text-primary-fixed font-mono bg-surface-container-high px-2 py-0.5 rounded text-xs inline-block w-fit ml-auto">SPACE</div>
+<div class="text-on-surface-variant">Pause</div>
+<div class="text-right text-primary-fixed font-mono bg-surface-container-high px-2 py-0.5 rounded text-xs inline-block w-fit ml-auto">P</div>
+<div class="text-on-surface-variant">Restart</div>
+<div class="text-right text-primary-fixed font-mono bg-surface-container-high px-2 py-0.5 rounded text-xs inline-block w-fit ml-auto">R</div>
+</div>
+</section>
+<!-- Actions -->
+<div class="flex flex-col gap-3 pt-4 mt-2 border-t border-outline-variant/30">
+<button class="btn-neon w-full py-3 rounded-full font-bold text-center uppercase tracking-wider text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">save</span>
+                    Save &amp; Resume
+                </button>
+<button class="btn-ghost w-full py-3 rounded-full font-semibold text-center text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">restart_alt</span>
+                    Reset High Score
+                </button>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Hidden on mobile, visible on desktop as context) -->
+<!-- Suppressed active navigation here as this is a contextual overlay setting, not a top level destination. -->
+<nav class="hidden md:flex flex-col h-screen w-64 border-r border-outline-variant/30 bg-surface-container/30 backdrop-blur-xl shadow-[0_0_20px_rgba(0,219,231,0.2)] fixed left-0 top-0 z-40 transition-all duration-300 ease-in-out p-hud-padding justify-between">
+<div class="flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<div class="font-headline-lg text-headline-lg text-primary-fixed">ORBITAL ZONE</div>
+<div class="text-on-surface-variant text-sm">Pilot ID: 8821</div>
+</div>
+<ul class="flex flex-col gap-2 font-label-caps text-label-caps">
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined">play_arrow</span>
+                        Play
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined">leaderboard</span>
+                        Leaderboard
+                    </a>
+</li>
+<!-- Settings is the active context implicitly, but as an overlay, we might highlight it or keep it inactive depending on exact flow. Highlighted here for semantic match -->
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg bg-primary-container text-on-primary-container font-bold hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+                        Settings
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 p-3 rounded-lg text-on-surface-variant hover:bg-surface-variant/50 transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+                        Profile
+                    </a>
+</li>
+</ul>
+</div>
+<button class="btn-ghost w-full py-3 rounded-full font-bold text-center text-xs uppercase tracking-wider">
+            UPGRADE PILOT
+        </button>
+</nav>
+</body></html>

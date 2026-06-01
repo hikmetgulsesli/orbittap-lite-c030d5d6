@@ -1,0 +1,20 @@
+[
+  {
+    "screenId": "b34b7be508404fedab4f22e09588b11d",
+    "name": "Gameplay - OrbitTap Lite",
+    "type": "game",
+    "description": "Gameplay - OrbitTap Lite screen",
+    "surfaceIds": [
+      "SURF_GAMEPLAY"
+    ]
+  },
+  {
+    "screenId": "de54a9ca3ccc499f8878b582ac19a59d",
+    "name": "Game Settings - OrbitTap Lite",
+    "type": "settings",
+    "description": "Game Settings - OrbitTap Lite screen",
+    "surfaceIds": [
+      "SURF_GAME_SETTINGS"
+    ]
+  }
+]
