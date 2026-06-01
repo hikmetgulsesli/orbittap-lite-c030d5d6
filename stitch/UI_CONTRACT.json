@@ -1,0 +1,212 @@
+[
+  {
+    "screenId": "b34b7be508404fedab4f22e09588b11d",
+    "screenTitle": "Gameplay - OrbitTap Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "TAP TO LAUNCH",
+        "line": 251
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 218
+      },
+      {
+        "type": "button",
+        "label": "TAP TO LAUNCH",
+        "line": 251
+      }
+    ],
+    "inputs": [],
+    "hardcodedData": [],
+    "totalInteractive": 2,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  },
+  {
+    "screenId": "de54a9ca3ccc499f8878b582ac19a59d",
+    "screenTitle": "Game Settings - OrbitTap Lite",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "link",
+        "label": "Play",
+        "href": "#",
+        "line": 362
+      },
+      {
+        "type": "link",
+        "label": "leaderboard",
+        "href": "#",
+        "line": 368
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 375
+      },
+      {
+        "type": "link",
+        "label": "Profile",
+        "href": "#",
+        "line": 381
+      },
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 264
+      },
+      {
+        "type": "button",
+        "label": "Close settings",
+        "line": 275
+      },
+      {
+        "type": "button",
+        "label": "&amp; Resume",
+        "line": 341
+      },
+      {
+        "type": "button",
+        "label": "Reset High Score",
+        "line": 345
+      },
+      {
+        "type": "button",
+        "label": "UPGRADE PILOT",
+        "line": 388
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 284
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 290
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 296
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 312
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 322
+      }
+    ],
+    "navigation": [
+      {
+        "type": "link",
+        "label": "Play",
+        "href": "#",
+        "line": 362
+      },
+      {
+        "type": "link",
+        "label": "leaderboard",
+        "href": "#",
+        "line": 368
+      },
+      {
+        "type": "link",
+        "label": "settings",
+        "href": "#",
+        "line": 375
+      },
+      {
+        "type": "link",
+        "label": "Profile",
+        "href": "#",
+        "line": 381
+      }
+    ],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "pause",
+        "line": 264
+      },
+      {
+        "type": "button",
+        "label": "Close settings",
+        "line": 275
+      },
+      {
+        "type": "button",
+        "label": "&amp; Resume",
+        "line": 341
+      },
+      {
+        "type": "button",
+        "label": "Reset High Score",
+        "line": 345
+      },
+      {
+        "type": "button",
+        "label": "UPGRADE PILOT",
+        "line": 388
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 284
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 290
+      },
+      {
+        "type": "input",
+        "label": "radio",
+        "inputType": "radio",
+        "line": 296
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 312
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 322
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 14,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]

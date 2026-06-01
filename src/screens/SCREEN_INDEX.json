@@ -1,0 +1,94 @@
+[
+  {
+    "screenId": "b34b7be508404fedab4f22e09588b11d",
+    "title": "Gameplay - OrbitTap Lite",
+    "componentName": "GameplayOrbittapLite",
+    "file": "src/screens/GameplayOrbittapLite.tsx",
+    "buttons": 2,
+    "inputs": 0,
+    "links": 0,
+    "actions": [
+      {
+        "id": "pause-1",
+        "kind": "button",
+        "label": "Pause",
+        "index": 0
+      },
+      {
+        "id": "tap-to-launch-2",
+        "kind": "button",
+        "label": "TAP TO LAUNCH",
+        "index": 1
+      }
+    ]
+  },
+  {
+    "screenId": "de54a9ca3ccc499f8878b582ac19a59d",
+    "title": "Game Settings - OrbitTap Lite",
+    "componentName": "GameSettingsOrbittapLite",
+    "file": "src/screens/GameSettingsOrbittapLite.tsx",
+    "buttons": 5,
+    "inputs": 5,
+    "links": 4,
+    "actions": [
+      {
+        "id": "pause-1",
+        "kind": "button",
+        "label": "Pause",
+        "index": 0
+      },
+      {
+        "id": "close-settings-2",
+        "kind": "button",
+        "label": "Close settings",
+        "index": 1
+      },
+      {
+        "id": "save-and-resume-3",
+        "kind": "button",
+        "label": "Save and Resume",
+        "index": 2
+      },
+      {
+        "id": "reset-high-score-4",
+        "kind": "button",
+        "label": "Reset High Score",
+        "index": 3
+      },
+      {
+        "id": "upgrade-pilot-5",
+        "kind": "button",
+        "label": "UPGRADE PILOT",
+        "index": 4
+      },
+      {
+        "id": "play-1",
+        "kind": "link",
+        "label": "Play",
+        "href": "#",
+        "index": 0
+      },
+      {
+        "id": "leaderboard-2",
+        "kind": "link",
+        "label": "Leaderboard",
+        "href": "#",
+        "index": 1
+      },
+      {
+        "id": "settings-3",
+        "kind": "link",
+        "label": "Settings",
+        "href": "#",
+        "index": 2
+      },
+      {
+        "id": "profile-4",
+        "kind": "link",
+        "label": "Profile",
+        "href": "#",
+        "index": 3
+      }
+    ]
+  }
+]
