@@ -59,8 +59,8 @@ export default function App() {
   }, [gameplayActive, state.activeScreen]);
 
   const gameplayActions = {
-    'pause-1': actPauseGame,
-    'tap-to-launch-2': state.activeScreen === 'gameplay' ? actStartGame : undefined,
+    'pause-1': () => actPauseGame(),
+    'tap-to-launch-2': state.activeScreen === 'gameplay' ? () => actStartGame() : undefined,
   };
 
   const settingsActions = {
