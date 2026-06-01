@@ -37,7 +37,11 @@ export default function App() {
       }
 
       if (event.key === 'Escape' || event.key.toLowerCase() === 'p') {
-        actPauseGame();
+        if (state.activeScreen === 'gameplay') {
+          actPauseGame();
+        } else {
+          orbitTapStore.actions.resume();
+        }
         return;
       }
 
@@ -47,7 +51,7 @@ export default function App() {
       }
 
       if (event.key === ' ' || event.key === 'Enter') {
-        if (state.activeScreen === 'gameplay') {
+        if (gameplayActive) {
           event.preventDefault();
           actStartGame();
         }
@@ -60,7 +64,7 @@ export default function App() {
 
   const gameplayActions = {
     'pause-1': () => actPauseGame(),
-    'tap-to-launch-2': state.activeScreen === 'gameplay' ? () => actStartGame() : undefined,
+    'tap-to-launch-2': gameplayActive ? () => actStartGame() : undefined,
   };
 
   const settingsActions = {
