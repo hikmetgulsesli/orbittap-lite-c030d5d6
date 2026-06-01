@@ -4,6 +4,7 @@ import {
   setRuntimeDifficulty,
   setRuntimePaused,
   tapToLaunch,
+  tickRuntime,
   upgradePilot,
   type OrbitTapRuntime,
 } from '../../game/game-runtime';
@@ -28,6 +29,7 @@ export interface OrbitTapState {
 
 export type OrbitTapAction =
   | { type: 'tap' }
+  | { type: 'tick' }
   | { type: 'pause' }
   | { type: 'resume' }
   | { type: 'navigate'; screen: OrbitTapScreen }
@@ -42,6 +44,7 @@ export interface OrbitTapStore {
   dispatch(action: OrbitTapAction): void;
   actions: {
     tapToLaunch(): void;
+    tick(): void;
     pause(): void;
     resume(): void;
     openSettings(): void;
@@ -116,6 +119,15 @@ export function createOrbitTapStore(repo: OrbitTapRepo = createOrbitTapRepo()): 
     switch (action.type) {
       case 'tap':
         nextRuntime = tapToLaunch(current.runtime);
+        nextState = {
+          ...current,
+          runtime: nextRuntime,
+          highScore: Math.max(current.highScore, nextRuntime.highScore),
+        };
+        shouldPersist = nextState.highScore !== current.highScore;
+        break;
+      case 'tick':
+        nextRuntime = tickRuntime(current.runtime);
         nextState = {
           ...current,
           runtime: nextRuntime,
@@ -201,6 +213,7 @@ export function createOrbitTapStore(repo: OrbitTapRepo = createOrbitTapRepo()): 
     dispatch,
     actions: {
       tapToLaunch: () => dispatch({ type: 'tap' }),
+      tick: () => dispatch({ type: 'tick' }),
       pause: () => dispatch({ type: 'pause' }),
       resume: () => dispatch({ type: 'resume' }),
       openSettings: () => dispatch({ type: 'pause' }),

@@ -9,14 +9,59 @@ export default function App() {
     orbitTapStore.getState,
     orbitTapStore.getState,
   );
+  const gameplayActive = state.activeScreen === 'gameplay' && !state.runtime.paused && !state.runtime.gameOver;
 
   useEffect(() => {
     installOrbitTapBridge(orbitTapStore);
   }, []);
 
+  useEffect(() => {
+    if (!gameplayActive) {
+      return;
+    }
+
+    const tickId = window.setInterval(() => {
+      orbitTapStore.actions.tick();
+    }, 900);
+
+    return () => window.clearInterval(tickId);
+  }, [gameplayActive]);
+
+  useEffect(() => {
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.repeat) {
+        return;
+      }
+
+      if (event.key === 'Escape' || event.key.toLowerCase() === 'p') {
+        if (state.activeScreen === 'gameplay') {
+          orbitTapStore.actions.pause();
+        } else {
+          orbitTapStore.actions.resume();
+        }
+        return;
+      }
+
+      if (event.key.toLowerCase() === 'r') {
+        orbitTapStore.actions.restart();
+        return;
+      }
+
+      if (event.key === ' ' || event.key === 'Enter') {
+        if (gameplayActive) {
+          event.preventDefault();
+          orbitTapStore.actions.tapToLaunch();
+        }
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [gameplayActive, state.activeScreen]);
+
   const gameplayActions = {
     'pause-1': orbitTapStore.actions.pause,
-    'tap-to-launch-2': orbitTapStore.actions.tapToLaunch,
+    'tap-to-launch-2': gameplayActive ? orbitTapStore.actions.tapToLaunch : undefined,
   };
 
   const settingsActions = {
@@ -44,7 +89,13 @@ export default function App() {
       ) : state.activeScreen === 'leaderboard' || state.activeScreen === 'profile' ? (
         <GameSettingsOrbittapLite actions={settingsActions} />
       ) : (
-        <GameplayOrbittapLite actions={gameplayActions} runtime={state.runtime} />
+        <div
+          data-gameplay-controls={gameplayActive ? 'active' : 'inactive'}
+          aria-disabled={gameplayActive ? undefined : true}
+          hidden={state.runtime.gameOver ? undefined : false}
+        >
+          <GameplayOrbittapLite actions={gameplayActions} runtime={state.runtime} />
+        </div>
       )}
     </div>
   );

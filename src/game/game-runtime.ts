@@ -61,13 +61,28 @@ export function tapToLaunch(runtime: OrbitTapRuntime): OrbitTapRuntime {
     return runtime;
   }
 
+  return advanceRuntime(runtime, 'tap');
+}
+
+export function tickRuntime(runtime: OrbitTapRuntime): OrbitTapRuntime {
+  if (runtime.paused || runtime.gameOver) {
+    return runtime;
+  }
+
+  return advanceRuntime(runtime, 'tick');
+}
+
+function advanceRuntime(runtime: OrbitTapRuntime, source: 'tap' | 'tick'): OrbitTapRuntime {
   const tick = runtime.tick + 1;
   const lane = nextLane(runtime.player.lane, runtime.difficulty);
-  const baseScore = runtime.player.upgraded ? 18 : 12;
+  const baseScore = source === 'tap' ? (runtime.player.upgraded ? 18 : 12) : runtime.player.upgraded ? 6 : 4;
   const score = runtime.score + baseScore + runtime.level;
-  const progress = Math.min(100, runtime.progress + (runtime.player.upgraded ? 18 : 14));
+  const progress = Math.min(
+    100,
+    runtime.progress + (source === 'tap' ? (runtime.player.upgraded ? 18 : 14) : runtime.player.upgraded ? 5 : 3),
+  );
   const level = 1 + Math.floor(score / 120);
-  const energy = Math.min(MAX_ENERGY, runtime.energy + 6);
+  const energy = Math.min(MAX_ENERGY, runtime.energy + (source === 'tap' ? 6 : 2));
   const lives = calculateLives(runtime.lives, tick, runtime.difficulty, runtime.player.upgraded);
   const gameOver = lives <= 0;
   const highScore = Math.max(runtime.highScore, score);
